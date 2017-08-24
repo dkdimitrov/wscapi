@@ -3,7 +3,6 @@
     "description": "wsc api php package",
     "homepage": "https://github.com/dkdimitrov/wscapi",
     "license": "MIT",
-    "version": "1.0.1",
     "authors": [
         {
             "name": "Dragomir Dimitrov",
