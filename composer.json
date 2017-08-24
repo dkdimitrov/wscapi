@@ -1,5 +1,5 @@
 {
-    "name": "dkdimitrov/wsc",
+    "name": "dkdimitrov/wscapi",
     "description": "wsc api php package",
     "authors": [
         {
@@ -15,8 +15,5 @@
     "require": {
         "php": ">=5.6.4",
         "guzzlehttp/guzzle": "6.3.*"
-    },
-    "config": {
-        "vendor-dir": "vendor"
     }
 }
