@@ -2,8 +2,6 @@
 
 namespace Wsc\Wsc;
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
 use Illuminate\Support\ServiceProvider;
 use Wsc\Wsc\WscApi;
 
