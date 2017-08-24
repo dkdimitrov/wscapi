@@ -3,6 +3,7 @@
 namespace Wsc\Wsc;
 
 use Illuminate\Support\ServiceProvider;
+
 use Wsc\Wsc\WscApi;
 
 class WscServiceProvider extends ServiceProvider
