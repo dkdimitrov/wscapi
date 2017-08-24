@@ -1,6 +1,7 @@
 {
     "name": "dkdimitrov/wscapi",
     "description": "wsc api php package",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Dragomir Dimitrov",
