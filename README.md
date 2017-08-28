@@ -18,3 +18,13 @@ $wsc->fetchSpecies('049542');
 
 ```
 
+## For Laravel users:
+
+Register the ServiceProvider in `config/app.php`
+
+```php
+        'providers' => [
+		// [...]
+                Wsc\Wsc\WscServiceProvider::class,
+        ],
+```
