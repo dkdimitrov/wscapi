@@ -6,7 +6,7 @@ This is a simple package to connect the WSC API and fetch taxa information.
 
 Install the package via composer: `composer require dkdimitrov/wscapi`
 
-##Simple use:
+## Simple use:
 Make an instance passing your Api key. Then fetch the taxon passing as an argument its lsid (digits only, not the whole string)
 
 ```php
