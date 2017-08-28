@@ -28,3 +28,8 @@ Register the ServiceProvider in `config/app.php`
                 Wsc\Wsc\WscServiceProvider::class,
         ],
 ```
+
+Then add your API Key to your .env file like this:
+```php
+        WSC_API_KEY=yourApiKeyString
+```
