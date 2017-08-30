@@ -79,6 +79,7 @@ class WscApi
     public function fetchUpdatedTaxa($date = null)
     {
         $taxa = [];
+        
         $updated = [];
 
         $url = $date ? 'http://wsc.nmbe.ch/api/updates?date=' . $date . '&apiKey=' . $this->apiKey : 'http://wsc.nmbe.ch/api/updates?apiKey=' . $this->apiKey
