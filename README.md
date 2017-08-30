@@ -51,7 +51,7 @@ If the taxon status is not VALID you can fetch the valid one by calling this met
 ```php
 $species = $wsc->fetchSpecies('016759');
 
-if($species->taxon->status != 'VALID'){
+if($species->taxon->status == 'SYNONYM'){
     $valid = $wsc->fetchValidTaxon($species->validTaxon->_href)
 }
 

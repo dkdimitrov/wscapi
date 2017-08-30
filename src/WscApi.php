@@ -76,14 +76,13 @@ class WscApi
      * @param $date
      * @return array
      */
-    public function fetchUpdatedTaxa($date)
+    public function fetchUpdatedTaxa($date = null)
     {
         $taxa = [];
         $updated = [];
-        $res = $this->client->request(
-            'GET',
-            'http://wsc.nmbe.ch/api/updates?date=' . $date . '&apiKey=' . $this->apiKey
-        );
+
+        $url = $date ? 'http://wsc.nmbe.ch/api/updates?date=' . $date . '&apiKey=' . $this->apiKey : 'http://wsc.nmbe.ch/api/updates?apiKey=' . $this->apiKey
+        $res = $this->client->request('GET', $url);
 
         $temp = json_decode($res->getBody());
 
