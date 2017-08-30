@@ -46,7 +46,7 @@ $wsc->fetchSpecies('049542');
 
 ```
 
-If the taxon status is not VALID you can fetch the valid one by calling this method with the link as an argument:
+If the taxon status is SYNONYM you can fetch the valid one by calling this method with the link as an argument:
 
 ```php
 $species = $wsc->fetchSpecies('016759');
