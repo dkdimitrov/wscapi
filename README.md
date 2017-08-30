@@ -57,8 +57,8 @@ if($species->taxon->status == 'SYNONYM'){
 
 ```
 
-If you wish to fetch all updated taxa for the given period, use the method below and pass the starting date.
-This will return all the result from the date you provide to now.
+If you wish to fetch all updated taxa for the given period, use the method below and pass the starting date (optional).
+This will return all the result from the date you provide to now. If you do not provide date only the results from the current day will be fetched.
 
 ```php
 
