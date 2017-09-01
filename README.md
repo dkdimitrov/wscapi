@@ -68,7 +68,7 @@ If no type is provided all types will be returned. Date should be in format 'YYY
 ```php
 
 $wsc->fetchUpdatedTaxa(null, 'YYYY-MM-DD');
-$wsc->fetchUpdatedTaxa('species', null);
+$wsc->fetchUpdatedTaxa('species');
 $wsc->fetchUpdatedTaxa('species', 'YYYY-MM-DD');
 
 ```
