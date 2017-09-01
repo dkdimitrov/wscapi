@@ -76,13 +76,34 @@ class WscApi
      * @param $date
      * @return array
      */
-    public function fetchUpdatedTaxa($date = null)
+    public function fetchUpdatedTaxa($type = null, $date = null)
     {
+        $supportedTypes = ['family', 'genus', 'species'];
+
         $taxa = [];
-        
+
         $updated = [];
 
-        $url = $date ? 'http://wsc.nmbe.ch/api/updates?date=' . $date . '&apiKey=' . $this->apiKey : 'http://wsc.nmbe.ch/api/updates?apiKey=' . $this->apiKey
+        if($date){
+            if (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$date)) {
+                die('invalid date');
+            }
+        }
+
+        if($type){
+            if(!in_array($type, $supportedTypes)) die('invalid type');
+        }
+
+
+
+        if($type){
+            $url = $date ? 'http://wsc.nmbe.ch/api/updates?type=' . $type . '&date=' . $date . '&apiKey=' . $this->apiKey :
+                'http://wsc.nmbe.ch/api/updates?type=' . $type . '&apiKey=' . $this->apiKey;
+        }else{
+            $url = $date ? 'http://wsc.nmbe.ch/api/updates?date=' . $date . '&apiKey=' . $this->apiKey :
+                'http://wsc.nmbe.ch/api/updates?apiKey=' . $this->apiKey;
+
+        }
 
         $res = $this->client->request('GET', $url);
 

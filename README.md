@@ -51,18 +51,25 @@ If the taxon status is SYNONYM you can fetch the valid one by calling this metho
 ```php
 $species = $wsc->fetchSpecies('016759');
 
-if($species->taxon->status == 'SYNONYM'){
+if($species->taxon->status == 'SYNONYM' || $species->taxon->status == 'HOMONYM_REPLACED'){
     $valid = $wsc->fetchValidTaxon($species->validTaxon->_href)
 }
 
 ```
 
-If you wish to fetch all updated taxa for the given period, use the method below and pass the starting date (optional).
-This will return all the result from the date you provide to now. If you do not provide date only the results from the current day will be fetched.
+If you wish to fetch all or specific updated taxa for the given period, use the method below and pass the taxon type (optional) and starting date (optional).
+Valid values for type:
+* family
+* genus
+* species
+
+If no type is provided all types will be returned. Date should be in format 'YYYY-MM-DD'. The results from the date you provide to now will be returned. If you do not provide date the results from the last 6 months will be fetched.
 
 ```php
 
-$wsc->fetchUpdatedTaxa('YYYY-MM-DD');
+$wsc->fetchUpdatedTaxa(null, 'YYYY-MM-DD');
+$wsc->fetchUpdatedTaxa('species', null);
+$wsc->fetchUpdatedTaxa('species', 'YYYY-MM-DD');
 
 ```
 
